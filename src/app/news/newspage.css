@@ -1,0 +1,22 @@
+.mr-page{
+  display: inline-block;
+}
+.page-bt{
+  color: #c0986a;
+  font-size: 18px;
+  margin: 0 6px;
+  float: left;
+}
+.page-bt:hover{
+  cursor: pointer;
+  color: #b28b5e;
+}
+.news-table{
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 15px
+}
+.news-table h2:hover{
+  cursor: pointer;
+  text-decoration: underline;
+}

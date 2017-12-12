@@ -1,0 +1,24 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="logo-toprow">
+  <img src="../assets/image/logoCh.png" style="margin: 2% auto">
+</div>
+<div class="bar-pos">
+  <div>
+    <ul class="morow-navbar">
+      <!--<li style="width: 20%;padding-top: 16px;"><img src="../assets/image/imgMorowLogo.png" height="60"></li>-->
+      <li (click)="nowTab=1" (click)="routeNav('home')" class="mr-bar-tab" [class.mr-active]="nowTab==1"><div class="reskew">首页</div></li>
+      <li class="mr-bar-tab" [class.mr-active]="nowTab==2" (click)="nowTab=2" (click)="routeNav('about')"><div class="reskew">关于我们</div></li>
+      <li class="mr-bar-tab" [class.mr-active]="nowTab==3" (click)="nowTab=3" (click)="routeNav('group')"><div class="reskew">投资团队</div></li>
+      <li class="mr-bar-tab" [class.mr-active]="nowTab==4" (click)="nowTab=4" (click)="routeNav('investment')"><div class="reskew">投资企业</div></li>
+      <li class="mr-bar-tab" [class.mr-active]="nowTab==5" (click)="nowTab=5" (click)="routeNav('news')"><div class="reskew">活动与新闻</div></li>
+      <li class="mr-bar-tab" [class.mr-active]="nowTab==6" (click)="nowTab=6" (click)="routeNav('wanted')"><div class="reskew">招聘人才</div></li>
+      <!--<li class="mr-bar-tab" [class.mr-active]="nowTab==7" (click)="nowTab=7"><div class="reskew">联系我们</div></li>-->
+      <li class="mr-bar-tab" [class.mr-active]="nowTab==8" (click)="nowTab=8"><div class="reskew">切换语言<i class="dropdown-a"></i></div></li>
+    </ul>
+  </div>
+</div>
+<router-outlet></router-outlet>
+<div class="mr-footer">
+  <p class="copyright-p">Copyright©️ 1996-2016 Wemerge Ventures Co. All rights reserved</p>
+  <span><img src="../assets/image/logoCh.png"></span>
+</div>

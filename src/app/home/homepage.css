@@ -1,0 +1,117 @@
+.mr-pic-slider{
+  position: relative;
+  width: 100%;
+  height: 728px;
+}
+.slider-ls{
+  list-style-type: none;
+  text-align: center;
+  width: 100%;
+}
+.slider-ls li{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+.slider-ls .img-banner{
+  opacity: 0;
+  transition: opacity .5s linear;
+}
+.img-active{
+  opacity: 1 !important;
+}
+.slider-ctrl{
+  position: absolute;
+  width: 100%;
+  bottom: 3.6%;
+  text-align: center;
+  background-color: transparent;
+  z-index: 10;
+}
+.ctrl-dot{
+  display: inline-block;
+  margin: 0 15px;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  border-radius: 50%;
+  background-color: rgba(125,125,125,.8);
+}
+.dot-active{
+  background-color: rgba(255,255,255,.8);
+}
+.pic-setls{
+  width: 100%;
+  white-space: nowrap;
+  transition: transform .42s ease-out;
+}
+.pic-setls li{
+  position: relative;
+  width: 20%;
+  display: inline-block;
+}
+.v-poster{
+  height: 162px;
+  background-size: cover;
+  background-position: center;
+}
+.pic-setls img{
+  width: 100%;
+  height: 100%;
+}
+.mr-arrow{
+  position: absolute;
+  color: #fff;
+  margin-top: 2.6%;
+  z-index: 10;
+}
+.abs-l{
+  left: 0;
+}
+.abs-r{
+  right: 0;
+}
+.mr-arrow img{
+  opacity: .9;
+}
+.mr-arrow img:hover{
+  opacity: 1;
+  cursor: pointer;
+}
+.mr-video-title{
+  font-size: 16px;
+  color: #5b5b5b;
+  text-align: center;
+}
+.overshow{
+  overflow: visible !important;
+}
+@keyframes h-scroll {
+  0%{
+    transform: translateX(0);
+  }
+  20%{
+    transform: translateX(-5%);
+  }
+  50%{
+    transform: translateX(-10%);
+  }
+  80%{
+    transform: translateX(-15%);
+  }
+  100%{
+    transform: translateX(-20%);
+  }
+}
+.arr-more{
+  display: inline-block;
+  width: 22px;
+  height: 38px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url('../../assets/image/home/page_arrow.png');
+  vertical-align: top;
+}

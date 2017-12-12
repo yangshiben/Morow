@@ -1,0 +1,73 @@
+.logo-toprow{
+  text-align: center;
+  background-color: #f9f7f1;
+}
+.bar-pos{
+  position: relative;
+  top: 0;
+  width: 100%;
+  padding: 0 5%;
+  background-color: #f9f7f1;
+  z-index: 1000;
+}
+.morow-navbar{
+  width: 100%;
+  list-style-type: none;
+  text-align: center;
+  -webkit-padding-start: 0;
+  -webkit-margin-before: 0;
+  -webkit-margin-after: 0;
+}
+.mr-bar-tab{
+  position: relative;
+  display: inline-block;
+  font-size: 16px;
+  line-height: 55px;
+  width: 10%;
+  height: 55px;
+  transform: skew(-10deg);
+  text-align: center;
+  cursor: pointer;
+  bottom: 0;
+}
+.reskew{
+  transform: skew(10deg);
+}
+.mr-active{
+  color: #fefefe;
+  background-color: #360203;
+}
+.mr-footer{
+  margin-top: 2%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  bottom: 0;
+  height: 180px;
+  background-color: #f7f4eb;
+}
+.copyright-p{
+  display: inline-block;
+  color: #525252;
+  font-size: 16px;
+}
+.bg-transparent{
+  background-color: transparent !important;
+}
+.dropdown-a{
+  position: relative;
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-width: 7px;
+  font-style: normal;
+  border-color: #360203 transparent transparent transparent;
+  border-top-color: inherit;
+  border-style: solid;
+  cursor: pointer;
+  vertical-align: middle;
+  margin-left: 3px;
+  top: 2px;
+}

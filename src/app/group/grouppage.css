@@ -1,0 +1,22 @@
+.member-clock{
+  display: inline-block;
+  width: 300px;
+  margin: 0 20px 35px;
+}
+.photo-wrap{
+  display: inline-block;
+  width: 300px;
+  height: 400px;
+  background-position: center;
+  background-size: contain;
+}
+.banner-desc-box{
+  display: inline-block;
+  width: 26%;
+  margin-top: 6%;
+  margin-left: 4%;
+  font-size: 24px;
+  color: #525252;
+  padding: 1%;
+  line-height: 2;
+}
