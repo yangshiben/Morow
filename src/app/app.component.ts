@@ -12,8 +12,10 @@ import 'rxjs/add/operator/mergeMap';
 })
 export class AppComponent implements OnInit{
   title = 'app';
-  nowTab: number = 1;
-  document = document
+  nowTab = 1;
+  document = document;
+  langShow = false;
+  menuDrop = false;
 
   constructor(private router: Router, private activatesRoute: ActivatedRoute) {}
 
@@ -21,7 +23,7 @@ export class AppComponent implements OnInit{
     this.routerWatcher();
 
   }
-  //监控路由变化，动态切换激活菜单
+  // 监控路由变化，动态切换激活菜单
   routerWatcher() {
     this.router.events
       .filter(event => event instanceof NavigationEnd)
@@ -58,7 +60,7 @@ export class AppComponent implements OnInit{
             break;
           default: this.nowTab = 1;
         }
-      })
+      });
   }
 
   routeNav(route) {

@@ -1,12 +1,74 @@
 .logo-toprow{
   text-align: center;
   background-color: #f9f7f1;
+  padding: 2%;
+}
+@media screen and (min-width: 680px) {
+  .logo-toprow img{
+    width: 16%
+  }
+  .dropdown-bar{
+    display: none !important;
+  }
+  .bar-pos{
+    display: block !important;
+  }
+}
+@media screen and (max-width: 680px) {
+  .logo-toprow img{
+    width: 30%
+  }
+  .dropdown-bar{
+    display: flex !important;
+  }
+  .bar-pos{
+    display: none !important;
+  }
+
+}
+.dropdown-bar{
+  position: relative;
+  padding: 0 .3rem;
+  height: 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f9f7f1;
+}
+.drop-menu{
+  top: 3rem;
+  left: 0;
+  right: 0;
+  position: absolute;
+  padding: 1rem 1.2rem;
+  border-top: 1px solid #e4e4e4;
+  background-color: #f9f7f1;
+  z-index: 10;
+}
+.drop-menu li{
+  padding: .6rem 0;
+}
+.drop-menu a{
+  font-size: 1.2rem;
+  color: #525252;
+  text-decoration: none;
+}
+.drop-menu li:hover,active{
+  background-color: #e4e4e4;
+}
+.drop-icon{
+  display: inline-block;
+  height: 2.5rem;
+  width: 2.5rem;
+  background-position: center;
+  background-size: contain;
+  background-image: url('../assets/icon/menuIcon.png');
 }
 .bar-pos{
   position: relative;
   top: 0;
   width: 100%;
-  padding: 0 5%;
+  padding: 0 1rem;
   background-color: #f9f7f1;
   z-index: 1000;
 }
@@ -21,10 +83,10 @@
 .mr-bar-tab{
   position: relative;
   display: inline-block;
-  font-size: 16px;
-  line-height: 55px;
-  width: 10%;
-  height: 55px;
+  font-size: .8rem;
+  line-height: 2.75rem;
+  width: 6.5rem;
+  height: 2.75rem;
   transform: skew(-10deg);
   text-align: center;
   cursor: pointer;
@@ -37,21 +99,54 @@
   color: #fefefe;
   background-color: #360203;
 }
-.mr-footer{
-  margin-top: 2%;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  width: 100%;
-  bottom: 0;
-  height: 180px;
-  background-color: #f7f4eb;
+@media screen and (min-width: 680px) {
+  .copyright-p{
+    display: inline-block;
+    color: #828282;
+    font-size: 1rem;
+  }
+  .mr-footer{
+    padding: 2rem 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    bottom: 0;
+    background-color: #f7f4eb;
+  }
+  .mr-bar-tab{
+    width: 4.6rem !important;
+  }
+  .footer-logo{
+    display: inline-block;
+  }
+  .footer-logo img{
+    width: 72%;
+  }
 }
-.copyright-p{
-  display: inline-block;
-  color: #525252;
-  font-size: 16px;
+@media screen and (max-width: 680px) {
+  .mr-footer{
+    position: relative;
+    padding: 1rem 0;
+    width: 100%;
+    bottom: 0;
+    background-color: #f7f4eb;
+  }
+  .copyright-p{
+    margin: 0 1rem;
+    color: #828282;
+    font-size: .8rem;
+    text-align: center;
+  }
+  .footer-logo{
+    display: block;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  .footer-logo img{
+    width: 26%;
+  }
 }
 .bg-transparent{
   background-color: transparent !important;
@@ -61,13 +156,70 @@
   display: inline-block;
   width: 0;
   height: 0;
-  border-width: 7px;
+  border-width: .35rem;
   font-style: normal;
   border-color: #360203 transparent transparent transparent;
   border-top-color: inherit;
   border-style: solid;
   cursor: pointer;
   vertical-align: middle;
-  margin-left: 3px;
-  top: 2px;
+  margin-left: .15rem;
+  top: .1rem;
+}
+.lang-tab{
+  position: absolute;
+  display: inline-block;
+  font-size: .8rem;
+  line-height: 2.75rem;
+  width: 6rem;
+  text-align: center;
+  color: #5b5b5b;
+  height: 2.75rem;
+  text-align: center;
+  bottom: 0;
+  right: 1.2%;
+}
+.lang-mobile{
+  display: inline-block;
+  font-size: 1.2rem;
+  color: #525252;
+  text-align: center;
+  bottom: 0;
+  margin-left: .5rem;
+  padding-top: .2rem;
+}
+.lang-tab span:hover{
+  cursor: pointer;
+}
+.lang-ls{
+  display: inline-block;
+  position: absolute;
+  width: 6rem;
+  right: 1.2%;
+  background-color: #f9f7f1;
+  top: 100%;
+  color: #525252;
+  padding-bottom: .3rem;
+}
+.lang-ls li{
+  margin:  0;
+  line-height: 1.8rem;
+  cursor: pointer;
+}
+.lang-ls-mobile{
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  width: 7.5rem;
+  top: 100%;
+  background-color: #f9f7f1;
+}
+.lang-ls-mobile li{
+  text-align: center;
+  margin: .5rem 0;
+  color: #545454;
+  cursor: pointer;
+}
+.lang-ls li:hover{
+  color: #a2a2a2;
 }

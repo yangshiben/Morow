@@ -1,6 +1,24 @@
 <!--The content below is only a placeholder and can be replaced.-->
+<div class="dropdown-bar">
+  <ul class="drop-menu" *ngIf="menuDrop">
+    <li><a>首页</a></li>
+    <li><a>关于我们</a></li>
+    <li><a>投资团队</a></li>
+    <li><a>投资企业</a></li>
+    <li><a>活动与新闻</a></li>
+    <li><a>招聘人才</a></li>
+  </ul>
+  <div class="lang-mobile"><div ><span (click)="langShow=!langShow">切换语言
+        <i class="dropdown-a"></i></span></div>
+    <ul class="lang-ls-mobile" *ngIf="langShow">
+      <li>中文</li>
+      <li>English</li>
+    </ul>
+  </div>
+  <span class="drop-icon" (click)="menuDrop=!menuDrop"></span>
+</div>
 <div class="logo-toprow">
-  <img src="../assets/image/logoCh.png" style="margin: 2% auto">
+  <img src="assets/image/logoCh.png">
 </div>
 <div class="bar-pos">
   <div>
@@ -13,12 +31,18 @@
       <li class="mr-bar-tab" [class.mr-active]="nowTab==5" (click)="nowTab=5" (click)="routeNav('news')"><div class="reskew">活动与新闻</div></li>
       <li class="mr-bar-tab" [class.mr-active]="nowTab==6" (click)="nowTab=6" (click)="routeNav('wanted')"><div class="reskew">招聘人才</div></li>
       <!--<li class="mr-bar-tab" [class.mr-active]="nowTab==7" (click)="nowTab=7"><div class="reskew">联系我们</div></li>-->
-      <li class="mr-bar-tab" [class.mr-active]="nowTab==8" (click)="nowTab=8"><div class="reskew">切换语言<i class="dropdown-a"></i></div></li>
     </ul>
+      <div class="lang-tab"><div><span (click)="langShow=!langShow">
+        切换语言<i class="dropdown-a"></i></span></div>
+        <ul class="lang-ls" *ngIf="langShow">
+          <li>中文</li>
+          <li>English</li>
+        </ul>
+      </div>
   </div>
 </div>
 <router-outlet></router-outlet>
 <div class="mr-footer">
+  <div class="footer-logo"><img src="../assets/image/logoCh.png"></div>
   <p class="copyright-p">Copyright©️ 1996-2016 Wemerge Ventures Co. All rights reserved</p>
-  <span><img src="../assets/image/logoCh.png"></span>
 </div>

@@ -1,4 +1,4 @@
-<div style="margin-bottom: 5%;margin-top: -2%">
+<div style="margin-bottom: 5%;margin-top: -1rem">
   <div class="mr-pic-slider">
     <ul class="slider-ls">
       <li *ngFor="let pic of sliderPics">
@@ -12,62 +12,61 @@
       (click)="replayPic(pic)"></i>
     </div>
   </div>
-  <div style="margin-top: 6.5%;padding: 0 8%">
+  <div class="content-area">
     <h1 style="color: #5b5b5b;margin-bottom: 3%">企业公告</h1>
     <p style="color:#4b4b4b ">Some counterfeit and third party power adapters and batteries may not be designed properly and could result in safety issues.
       To ensure you receive a genuine Apple battery during a battery replacement, we recommend visiting an Apple Authorized Service
       Provider. If you need a replacement adapter to charge your Apple device, we recommend getting an Apple power adapter.</p>
-    <div style="margin-top: 6.5%">
-      <table style="width: 100%; border-collapse: separate;border-spacing: 0 15px">
-        <tr>
-          <td><img height="352" src="assets/image/imgNews.png"></td>
-          <td style="padding-left: 60px">
-            <h2 style="color: #5b5b5b;">最近新闻 Latest news</h2>
-            <p>Even Duterte himself has been accused of ordering a journalist to be killed. Two former policemen alleged earlier this year that Duterte,
-              while mayor of Davao City in 2003,paid tens of thousands of dollars to have radio broadcaster
-              Juan Pala murdered. Duterte denied the accusations.</p>
-          </td>
-        </tr>
-        <tr>
-          <td><img height="352" src="assets/image/imgNews.png"></td>
-          <td style="padding-left: 60px">
-            <h2 style="color: #5b5b5b;">最近新闻 Latest news</h2>
-            <p>Even Duterte himself has been accused of ordering a journalist to be killed. Two former policemen alleged earlier this year that Duterte,
-              while mayor of Davao City in 2003,paid tens of thousands of dollars to have radio broadcaster
-              Juan Pala murdered. Duterte denied the accusations.</p>
-          </td>
-        </tr>
-        <tr>
-          <td><img height="352" src="assets/image/imgNews.png"></td>
-          <td style="padding-left: 60px">
-            <h2 style="color: #5b5b5b;">最近新闻 Latest news</h2>
-            <p>Even Duterte himself has been accused of ordering a journalist to be killed. Two former policemen alleged earlier this year that Duterte,
-              while mayor of Davao City in 2003,paid tens of thousands of dollars to have radio broadcaster
-              Juan Pala murdered. Duterte denied the accusations.</p>
-          </td>
-        </tr>
-      </table>
+    <div style="margin-top: 8%">
+      <div style="margin-bottom: 2%">
+        <div class="news-pic"><img src="assets/image/imgNews.png"></div>
+        <div class="news-content">
+          <a class="news-title">最近新闻 Latest news</a>
+          <p>Even Duterte himself has been accused of ordering a journalist to be killed. Two former policemen alleged earlier this year that Duterte,
+            while mayor of Davao City in 2003,paid tens of thousands of dollars to have radio broadcaster
+            Juan Pala murdered. Duterte denied the accusations.</p>
+        </div>
+      </div>
+      <div style="margin-bottom: 2%">
+        <div class="news-pic"><img src="assets/image/imgNews.png"></div>
+        <div class="news-content">
+          <a class="news-title">最近新闻 Latest news</a>
+          <p>Even Duterte himself has been accused of ordering a journalist to be killed. Two former policemen alleged earlier this year that Duterte,
+            while mayor of Davao City in 2003,paid tens of thousands of dollars to have radio broadcaster
+            Juan Pala murdered. Duterte denied the accusations.</p>
+        </div>
+      </div>
+      <div style="margin-bottom: 2%">
+        <div class="news-pic"><img src="assets/image/imgNews.png"></div>
+        <div class="news-content">
+          <a class="news-title">最近新闻 Latest news</a>
+          <p>Even Duterte himself has been accused of ordering a journalist to be killed. Two former policemen alleged earlier this year that Duterte,
+            while mayor of Davao City in 2003,paid tens of thousands of dollars to have radio broadcaster
+            Juan Pala murdered. Duterte denied the accusations.</p>
+        </div>
+      </div>
       <div>
-        <span style="font-size: 27px;color: #c0986a;cursor: pointer">更多<i class="arr-more" (click)="linkTo()"></i></span>
+        <span class="more-news">更多<i class="arr-more" (click)="routeNav('news')"></i></span>
       </div>
     </div>
     <div style="margin-top: 5%">
       <h2 style="color: #5b5b5b;">视频标题</h2>
       <p>Many who reached Bangladesh - some with bullet or other wounds - said Burmese troops backed by local Buddhist mobs had burned their villages and
         attacked and killed civilians.</p>
-      <div style="margin-top: 2%">
-        <img style="width: 100%" src="assets/image/imgVideo.png">
-      </div>
-      <div style="position: relative;width: 100%;overflow-x: hidden">
-        <span class="mr-arrow abs-l" (click)="videoScrollCtrl(-1)"><img src="assets/image/home/btnArrowLeft.png"></span>
-        <span class="mr-arrow abs-r" (click)="videoScrollCtrl(1)"><img src="assets/image/home/btnArrowRight.png"></span>
-        <ul class="pic-setls" id="video_scroll" [ngStyle]="{'transform': 'translateX('+translateValue+'%)'}">
-          <li *ngFor="let item of videoList">
-            <div class="v-poster" [ngStyle]="{'background-image': 'url(' + item.url + ')'}"></div>
-              <!--<img src="{{item.url}}"></div>-->
-            <div class="mr-video-title">{{item.title}}</div>
-          </li>
-        </ul>
+      <div style="margin-top: 2rem;position: relative">
+        <div class="main-video">
+          <img style="width: 100%" src="assets/image/imgVideo.png">
+        </div>
+        <div class="video-rowbot">
+          <span class="mr-arrow abs-l" (click)="videoScrollCtrl(-1)"><img src="assets/image/home/btnArrowLeft.png"></span>
+          <span class="mr-arrow abs-r" (click)="videoScrollCtrl(1)"><img src="assets/image/home/btnArrowRight.png"></span>
+          <ul class="pic-setls" id="video_scroll" [ngStyle]="{'transform': 'translateX('+translateValue+'%)'}">
+            <li *ngFor="let item of videoList">
+              <div class="v-poster" [ngStyle]="{'background-image': 'url(' + item.url + ')'}"></div>
+              <div class="mr-video-title">{{item.title}}</div>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>

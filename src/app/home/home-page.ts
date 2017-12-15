@@ -43,8 +43,8 @@ export class HomePageComponent implements OnInit, AfterViewInit{
       this.translateValue = -(this.scrollPos * 20);
     }
   }
-  routeGo() {
-    this.router.navigateByUrl('home')
+  routeNav(route) {
+    this.router.navigateByUrl(route);
   }
   linkTo() {
     window.open('http://www.baidu.com');
