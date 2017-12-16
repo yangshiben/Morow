@@ -71,7 +71,7 @@
     background-position: center;
   }
   .mr-arrow{
-    margin-top: 2.5rem !important;
+    margin-top: 3.5rem !important;
   }
   .mr-arrow img {
     width: 60%;
@@ -80,7 +80,7 @@
     right: -20px !important;
   }
 }
-@media screen and (max-width: 680px){
+@media screen and (max-width: 800px){
   .pic-setls li{
     position: relative;
     width: 100%;
@@ -177,7 +177,7 @@
   font-size: 1.3rem;
   font-weight: 500;
 }
-@media screen and (min-width: 680px){
+@media screen and (min-width: 800px){
   .news-pic{
     position: relative;
     display: inline-block;
@@ -192,7 +192,7 @@
     font-size: 1rem;
   }
 }
-@media screen and (max-width: 680px){
+@media screen and (max-width: 800px){
   .news-pic{
     position: relative;
     display: inline-block;

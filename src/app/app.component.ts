@@ -4,24 +4,42 @@ import {ActivatedRoute, NavigationEnd, Router} from "@angular/router";
 import 'rxjs/add/operator/filter';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/mergeMap';
+import {TranslateService} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit {
   title = 'app';
   nowTab = 1;
   document = document;
   langShow = false;
   menuDrop = false;
+  usingLang = 1;
 
-  constructor(private router: Router, private activatesRoute: ActivatedRoute) {}
+  constructor(private router: Router, private activatesRoute: ActivatedRoute,
+              private translateService: TranslateService) {}
 
   ngOnInit() {
     this.routerWatcher();
-
+    this.initLanguage();
+  }
+  initLanguage() {
+    // --- set i18n begin ---
+    this.translateService.addLangs(['zh', 'en']);
+    this.translateService.setDefaultLang('zh');
+    // 获取当前浏览器环境的语言比如en、 zh
+    const broswerLang = this.translateService.getBrowserLang();
+    this.translateService.use(broswerLang.match(/en|zh/) ? broswerLang : 'zh');
+    this.usingLang = 1;
+    // --- set i18n end ---
+  }
+  setLanguage(lang) {
+    this.langShow = false;
+    this.usingLang = lang === 'zn' ? 1 : 2;
+    this.translateService.use(lang);
   }
   // 监控路由变化，动态切换激活菜单
   routerWatcher() {
