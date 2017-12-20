@@ -1,12 +1,12 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div class="dropdown-bar">
   <ul class="drop-menu" *ngIf="menuDrop">
-    <li><a>{{'menu1' | translate}}</a></li>
-    <li><a>{{'menu2' | translate}}</a></li>
-    <li><a>{{'menu3' | translate}}</a></li>
-    <li><a>{{'menu4' | translate}}</a></li>
-    <li><a>{{'menu5' | translate}}</a></li>
-    <li><a>{{'menu6' | translate}}</a></li>
+    <li><a (click)="nowTab=1" (click)="routeNav('home')">{{'menu1' | translate}}</a></li>
+    <li><a (click)="nowTab=2" (click)="routeNav('about')">{{'menu2' | translate}}</a></li>
+    <li><a (click)="nowTab=3" (click)="routeNav('group')">{{'menu3' | translate}}</a></li>
+    <li><a (click)="nowTab=4" (click)="routeNav('investment')">{{'menu4' | translate}}</a></li>
+    <li><a (click)="nowTab=5" (click)="routeNav('news')">{{'menu5' | translate}}</a></li>
+    <li><a (click)="nowTab=6" (click)="routeNav('wanted')">{{'menu6' | translate}}</a></li>
   </ul>
   <div class="lang-mobile"><div ><span (click)="langShow=!langShow">{{'changeLang' | translate}}
         <i class="dropdown-a"></i></span></div>

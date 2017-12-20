@@ -50,7 +50,7 @@
       </div>
     </div>
     <div style="margin-top: 5%">
-      <h2 style="color: #5b5b5b;">视频标题</h2>
+      <h4 style="color: #5b5b5b;">视频标题</h4>
       <p>Many who reached Bangladesh - some with bullet or other wounds - said Burmese troops backed by local Buddhist mobs had burned their villages and
         attacked and killed civilians.</p>
       <div style="margin-top: 2rem;position: relative">
@@ -58,8 +58,8 @@
           <img style="width: 100%" src="assets/image/imgVideo.png">
         </div>
         <div class="video-rowbot">
-          <span class="mr-arrow abs-l" (click)="videoScrollCtrl(-1)"><img src="assets/image/home/btnArrowLeft.png"></span>
-          <span class="mr-arrow abs-r" (click)="videoScrollCtrl(1)"><img src="assets/image/home/btnArrowRight.png"></span>
+          <span class="mr-arrow-l abs-l" (click)="videoScrollCtrl(-1)"></span>
+          <span class="mr-arrow-r abs-r" (click)="videoScrollCtrl(1)"></span>
           <ul class="pic-setls" id="video_scroll" [ngStyle]="{'transform': 'translateX('+translateValue+'%)'}">
             <li *ngFor="let item of videoList">
               <div class="v-poster" [ngStyle]="{'background-image': 'url(' + item.url + ')'}"></div>

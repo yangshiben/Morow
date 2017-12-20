@@ -3,13 +3,14 @@
  */
 import {AfterViewInit, Component, ElementRef, OnInit} from "@angular/core";
 import {Router} from "@angular/router";
+import { Observable } from 'rxjs';
 
 @Component({
   templateUrl: './home-page.html',
   styleUrls: ['./homepage.css']
 })
 
-export class HomePageComponent implements OnInit, AfterViewInit{
+export class HomePageComponent implements OnInit, AfterViewInit {
   sliderPics = [];
   videoList = [];
   activePic = null;
@@ -31,24 +32,50 @@ export class HomePageComponent implements OnInit, AfterViewInit{
   ngAfterViewInit() {
     this.autoPlay();
     this.scrollV = this.elm.nativeElement.querySelector('#video_scroll');
+    this.setPosterHeight();
+    this.setSliderHeight();
+    Observable.fromEvent(window, 'resize')
+      .debounceTime(100) // 以免频繁处理
+      .subscribe((event) => {
+        console.log(document.body.clientWidth);
+        // 这里处理页面变化时的操作
+        this.setPosterHeight();
+        this.setSliderHeight();
+      });
   }
+  // 设置首页轮播图片的高度
+  setSliderHeight() {
+    const slider = this.elm.nativeElement.querySelector('.mr-pic-slider');
+    if (slider) {
+      const width = slider.clientWidth;
+      slider.style.height = width * 0.52 + 'px';
+    }
+  }
+  setPosterHeight() {
+    const posters = this.elm.nativeElement.querySelectorAll('.v-poster');
+    posters.forEach(value => {
+      const width = value.clientWidth;
+      value.style.height = width * 0.5625 + 'px';
+    });
+  }
+  // 视频滚动控制
   videoScrollCtrl(flag: number) {
     if (this.videoList.length <= 5) { return; }
+    const screenW = document.body.clientWidth;
+    let offset = screenW > 800 ? 25 : 100;
     if (flag < 0 && this.scrollPos > 0) {
       this.scrollPos--;
-      this.translateValue = -(this.scrollPos * 20);
+      this.translateValue = -(this.scrollPos * offset);
     }
     if (flag > 0 && this.scrollPos + 5 < this.videoList.length) {
       this.scrollPos++;
-      this.translateValue = -(this.scrollPos * 20);
+      this.translateValue = -(this.scrollPos * offset);
     }
   }
   routeNav(route) {
     this.router.navigateByUrl(route);
   }
-  linkTo() {
-    window.open('http://www.baidu.com');
-  }
+  // 启动图片轮播
   autoPlay() {
     if (this.timer) {
      clearInterval(this.timer);
@@ -56,10 +83,11 @@ export class HomePageComponent implements OnInit, AfterViewInit{
     this.timer = setInterval(() => {
       if (this.picIndex == this.sliderPics.length - 1) {
         this.picIndex = 0;
+      } else {
+        this.picIndex++;
       }
-      else this.picIndex++;
       this.activePic = this.sliderPics[this.picIndex];
-    }, 4500)
+    }, 4500);
   }
   replayPic(pic) {
     this.activePic = pic;
@@ -68,7 +96,7 @@ export class HomePageComponent implements OnInit, AfterViewInit{
         this.picIndex = index;
         this.autoPlay();
       }
-    })
+    });
   }
 
 }

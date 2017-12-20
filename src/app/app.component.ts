@@ -1,5 +1,6 @@
-import {Component, OnInit} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, OnInit} from '@angular/core';
 import {ActivatedRoute, NavigationEnd, Router} from "@angular/router";
+import { Observable } from 'rxjs';
 
 import 'rxjs/add/operator/filter';
 import 'rxjs/add/operator/map';
@@ -11,7 +12,7 @@ import {TranslateService} from "@ngx-translate/core";
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, AfterViewInit {
   title = 'app';
   nowTab = 1;
   document = document;
@@ -20,11 +21,20 @@ export class AppComponent implements OnInit {
   usingLang = 1;
 
   constructor(private router: Router, private activatesRoute: ActivatedRoute,
-              private translateService: TranslateService) {}
+              private translateService: TranslateService, private elm: ElementRef) {}
 
   ngOnInit() {
     this.routerWatcher();
     this.initLanguage();
+  }
+  ngAfterViewInit() {
+    Observable.fromEvent(window, 'resize')
+      .debounceTime(100) // 以免频繁处理
+      .subscribe((event) => {
+        console.log(document.body.clientWidth);
+        // 这里处理页面变化时的操作
+        this.setSliderHeight();
+      });
   }
   initLanguage() {
     // --- set i18n begin ---
@@ -82,7 +92,15 @@ export class AppComponent implements OnInit {
   }
 
   routeNav(route) {
-    this.router.navigate([route])
+    this.menuDrop = false;
+    this.router.navigate([route]);
+  }
+  setSliderHeight() {
+    const slider = this.elm.nativeElement.querySelector('.mr-pic-slider');
+    if (slider) {
+      const width = slider.clientWidth;
+      slider.style.height = width * 0.52 + 'px';
+    }
   }
   isOnTop() {
     if (document.documentElement.scrollTop < 100) {

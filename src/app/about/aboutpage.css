@@ -1,7 +1,7 @@
 .banner-bg{
   display: flex;
   width: 100%;
-  padding: 30px auto;
+  padding: 1.5rem auto;
   margin-bottom: 3%;
   justify-content: space-around;
   background-repeat: no-repeat;
@@ -10,24 +10,28 @@
 }
 .about-desc{
   display: inline-block;
-  width: 36%;
-  margin-top: 4.6%;
-  margin-left: 5%;
-  padding: 3.2% 3.6%;
+  width: 20rem;
+  max-width: 90%;
+  margin: 4.6% 5% 4%;
+  padding: 3.5% 3.2%;
   color: #525252;
-  font-size: 23px;
-  border-radius: 10px;
+  font-size: 1rem;
+  border-radius: .5rem;
   background-color: rgba(255,255,255,.9);
 
 }
 .wrap-out{
   display: inline-block;
-  width: 190px;
+  width: 16%;
   margin: 3% 0;
+  position: relative;
+}
+.wrap-out img{
+  width: 100%;
 }
 .ban-title{
   color: #fff;
-  font-size: 22px;
-  margin-top: 20px;
+  font-size: 1.1rem;
+  margin-top: 1rem;
   text-align: center;
 }
