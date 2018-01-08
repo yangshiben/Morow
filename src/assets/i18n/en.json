@@ -1,5 +1,6 @@
 
 {
+  "logoUrl": "assets/image/logoEn.png",
   "menu1": "Home",
   "menu2": "About Us",
   "menu3": "Investment Team",
@@ -7,5 +8,33 @@
   "menu5": "Latest Activities",
   "menu6": "Join Us",
 
-  "changeLang": "Language"
+  "changeLang": "Language",
+
+  "announcement": "Announcements",
+  "videoTitle": "Video Title",
+  "newsMore": "More",
+  "aboutUs": "About us",
+  "investmentArea": "Industries",
+  "chainBlock": " Block Chain Technology",
+  "heightTech": "High Tech",
+  "internet": "Internet",
+  "consumer": "Consumer Evolution",
+  "energy": "Energy",
+  "estate": "Real Estate",
+  "entertainment": "Media and Entertainment",
+  "brandChain": "Brand Chain",
+  "travel": "Travel Industries",
+
+  "teamSlogan": "Team Slogan",
+
+  "philosophy": "Investment Philosophy",
+
+  "next": "Next",
+  "previous": "Previous",
+
+  "wanted": "Join Us",
+  "introduction": "Enterprise Introduction",
+  "forDetail": "For more details"
+
+
 }

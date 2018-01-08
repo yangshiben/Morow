@@ -1,7 +1,7 @@
 <div style="margin-bottom: 5%;margin-top: -1rem">
   <div class="mr-pic-slider">
     <ul class="slider-ls">
-      <li *ngFor="let pic of sliderPics">
+      <li *ngFor="let pic of sliderPics" class="slide_banner">
         <div class="img-banner" [ngStyle]="{'background-image': 'url(' + pic.url + ')'}"
              [class.img-active]="pic.id==activePic.id"></div>
         <!--<img width="100%" src="{{pic.url}}" [class.img-active]="pic.id==activePic.id">-->
@@ -13,44 +13,28 @@
     </div>
   </div>
   <div class="content-area">
-    <h1 style="color: #5b5b5b;margin-bottom: 3%">企业公告</h1>
+    <h2 [ngClass]="{'announce-zh': appService.usingLang == 'zh', 'announce-en': appService.usingLang == 'en'}">{{'announcement' | translate}}</h2>
     <p style="color:#4b4b4b ">Some counterfeit and third party power adapters and batteries may not be designed properly and could result in safety issues.
       To ensure you receive a genuine Apple battery during a battery replacement, we recommend visiting an Apple Authorized Service
       Provider. If you need a replacement adapter to charge your Apple device, we recommend getting an Apple power adapter.</p>
     <div style="margin-top: 8%">
-      <div style="margin-bottom: 2%">
-        <div class="news-pic"><img src="assets/image/imgNews.png"></div>
-        <div class="news-content">
-          <a class="news-title">最近新闻 Latest news</a>
-          <p>Even Duterte himself has been accused of ordering a journalist to be killed. Two former policemen alleged earlier this year that Duterte,
-            while mayor of Davao City in 2003,paid tens of thousands of dollars to have radio broadcaster
-            Juan Pala murdered. Duterte denied the accusations.</p>
+      <div style="margin-bottom: 2%" *ngFor="let news of newsList">
+        <div class="news-pic"><img src="{{news.img}}"></div>
+        <div class="news-content" *ngIf="appService.usingLang == 'zh'">
+          <a class="news-title">{{news.title.zh}}</a>
+          <p>{{news.summary.zh}}</p>
         </div>
-      </div>
-      <div style="margin-bottom: 2%">
-        <div class="news-pic"><img src="assets/image/imgNews.png"></div>
-        <div class="news-content">
-          <a class="news-title">最近新闻 Latest news</a>
-          <p>Even Duterte himself has been accused of ordering a journalist to be killed. Two former policemen alleged earlier this year that Duterte,
-            while mayor of Davao City in 2003,paid tens of thousands of dollars to have radio broadcaster
-            Juan Pala murdered. Duterte denied the accusations.</p>
-        </div>
-      </div>
-      <div style="margin-bottom: 2%">
-        <div class="news-pic"><img src="assets/image/imgNews.png"></div>
-        <div class="news-content">
-          <a class="news-title">最近新闻 Latest news</a>
-          <p>Even Duterte himself has been accused of ordering a journalist to be killed. Two former policemen alleged earlier this year that Duterte,
-            while mayor of Davao City in 2003,paid tens of thousands of dollars to have radio broadcaster
-            Juan Pala murdered. Duterte denied the accusations.</p>
+        <div class="news-content" *ngIf="appService.usingLang == 'en'">
+          <a class="news-title">{{news.title.en}}</a>
+          <p>{{news.summary.en}}</p>
         </div>
       </div>
       <div>
-        <span class="more-news">更多<i class="arr-more" (click)="routeNav('news')"></i></span>
+        <span class="more-news">{{'newsMore' | translate}}<i class="arr-more" (click)="routeNav('news')"></i></span>
       </div>
     </div>
     <div style="margin-top: 5%">
-      <h4 style="color: #5b5b5b;">视频标题</h4>
+      <h4 style="color: #5b5b5b;">{{'videoTitle' | translate}}</h4>
       <p>Many who reached Bangladesh - some with bullet or other wounds - said Burmese troops backed by local Buddhist mobs had burned their villages and
         attacked and killed civilians.</p>
       <div style="margin-top: 2rem;position: relative">
@@ -63,7 +47,7 @@
           <ul class="pic-setls" id="video_scroll" [ngStyle]="{'transform': 'translateX('+translateValue+'%)'}">
             <li *ngFor="let item of videoList">
               <div class="v-poster" [ngStyle]="{'background-image': 'url(' + item.url + ')'}"></div>
-              <div class="mr-video-title">{{item.title}}</div>
+              <div class="mr-video-title">{{'videoTitle' | translate}}</div>
             </li>
           </ul>
         </div>

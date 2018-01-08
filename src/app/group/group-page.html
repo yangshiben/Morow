@@ -1,51 +1,137 @@
 <div style="background-color: #f7f4dd">
   <div class="mr-pic-slider">
     <div class="top-banner">
-      <div class="img-banner" style="background-image: url('../../assets/image/group/img13.png')">
-        <div class="banner-desc-box">微合资本投资团队希望能通过我们的行业见地、投资经验和海内外资源，为优秀创业者提供资金支持和其他增值服务。
-          这将更好地帮助我们同创业者并肩成长、共创伟业。</div>
+      <div class="img-banner" style="background-image: url('../../assets/image/group/img13.jpg')">
       </div>
     </div>
   </div>
 </div>
-<div style="margin-top: 2%; padding: 0 3%">
+<div class="slogan-area">
+  <h2 [ngClass]="{'announce-zh': appService.usingLang == 'zh', 'announce-en': appService.usingLang == 'en'}">团队标语</h2>
+  <div class="banner-desc"  *ngIf="appService.usingLang=='zh'">{{teamInfo}}</div>
+  <div class="banner-desc"  *ngIf="appService.usingLang=='en'">{{teamInfoEn}}</div>
+</div>
+<div style="margin-top: 3.5%;margin-bottom: 8%">
   <div style="text-align: center">
-    <div class="member-clock">
-      <div class="photo-wrap" style="background-image: url('../../assets/image/group/member1.png')">
-      </div>
-      <div style="text-align: center;font-size: 20px;color: #292b2a">
-        CEO
-      </div>
+    <div class="team-row">
+      <table class="row-table">
+        <tr>
+          <td class="row-t-left">
+            <div class="round-head" style="background-image: url('assets/image/group/imgJR.png')"></div>
+          </td>
+          <td>
+            <div class="team-intro">
+              <div class="member-name"><span>黄建荣</span>首席执行官</div>
+              <div class="team-detail">
+                <ul>
+                  <li>WBF世界区块链基金会理事成员</li>
+                  <li>CEF加密数字投资基金合伙人</li>
+                  <li>GaGa Rewards智树科技创始人</li>
+                </ul>
+                <div style="margin-top: 1rem">
+                  JR是一位充满活力、积极阳光的连续创业者，对于企业从零到一有着亲身经历及丰富经验 。凭着对企业的理解及经历，能大大提升挖掘优秀项目的能力。
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </table>
     </div>
-    <div class="member-clock">
-      <div class="photo-wrap" style="background-image: url('../../assets/image/group/member2.png')"></div>
-      <div style="text-align: center;font-size: 20px;color: #292b2a">
-        Name
-      </div>
+    <div class="team-row">
+      <table class="row-table">
+        <tr>
+          <td class="row-t-left">
+            <div class="round-head" style="background-image: url('../../assets/image/group/imgJonathan.png')"></div>
+          </td>
+          <td>
+            <div class="team-intro">
+              <div class="member-name"><span>黄建荣</span>首席执行官</div>
+              <div class="team-detail">
+                <ul>
+                  <li>WBF世界区块链基金会理事成员</li>
+                  <li>CEF加密数字投资基金合伙人</li>
+                  <li>GaGa Rewards智树科技创始人</li>
+                </ul>
+                <div style="margin-top: 1rem">
+                  JR是一位充满活力、积极阳光的连续创业者，对于企业从零到一有着亲身经历及丰富经验 。凭着对企业的理解及经历，能大大提升挖掘优秀项目的能力。
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </table>
     </div>
-    <div class="member-clock">
-      <div class="photo-wrap" style="background-image: url('../../assets/image/group/member3.png')"></div>
-      <div style="text-align: center;font-size: 20px;color: #292b2a">
-        Name
-      </div>
+    <div class="team-row">
+      <table class="row-table">
+        <tr>
+          <td class="row-t-left">
+            <div class="round-head" style="background-image: url('../../assets/image/group/imgKahAnn.png')"></div>
+          </td>
+          <td>
+            <div class="team-intro">
+              <div class="member-name"><span>黄建荣</span>首席执行官</div>
+              <div class="team-detail">
+                <ul>
+                  <li>WBF世界区块链基金会理事成员</li>
+                  <li>CEF加密数字投资基金合伙人</li>
+                  <li>GaGa Rewards智树科技创始人</li>
+                </ul>
+                <div style="margin-top: 1rem">
+                  JR是一位充满活力、积极阳光的连续创业者，对于企业从零到一有着亲身经历及丰富经验 。凭着对企业的理解及经历，能大大提升挖掘优秀项目的能力。
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </table>
     </div>
-    <div class="member-clock">
-      <div class="photo-wrap" style="background-image: url('../../assets/image/group/member4.png')"></div>
-      <div style="text-align: center;font-size: 20px;color: #292b2a">
-        Name
-      </div>
+    <div class="team-row">
+      <table class="row-table">
+        <tr>
+          <td class="row-t-left">
+            <div class="round-head" style="background-image: url('../../assets/image/group/imgGeorge.png')"></div>
+          </td>
+          <td>
+            <div class="team-intro">
+              <div class="member-name"><span>黄建荣</span>首席执行官</div>
+              <div class="team-detail">
+                <ul>
+                  <li>WBF世界区块链基金会理事成员</li>
+                  <li>CEF加密数字投资基金合伙人</li>
+                  <li>GaGa Rewards智树科技创始人</li>
+                </ul>
+                <div style="margin-top: 1rem">
+                  JR是一位充满活力、积极阳光的连续创业者，对于企业从零到一有着亲身经历及丰富经验 。凭着对企业的理解及经历，能大大提升挖掘优秀项目的能力。
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </table>
     </div>
-    <div class="member-clock">
-      <div class="photo-wrap" style="background-image: url('../../assets/image/group/member5.png')"></div>
-      <div style="text-align: center;font-size: 20px;color: #292b2a">
-        Name
-      </div>
-    </div>
-    <div class="member-clock">
-      <div class="photo-wrap" style="background-image: url('../../assets/image/group/member6.png')"></div>
-      <div style="text-align: center;font-size: 20px;color: #292b2a">
-        Name
-      </div>
+    <div class="team-row">
+      <table class="row-table">
+        <tr>
+          <td class="row-t-left">
+            <div class="round-head" style="background-image: url('../../assets/image/group/imgAlex.png')"></div>
+          </td>
+          <td>
+            <div class="team-intro">
+              <div class="member-name"><span>黄建荣</span>首席执行官</div>
+              <div class="team-detail">
+                <ul>
+                  <li>WBF世界区块链基金会理事成员</li>
+                  <li>CEF加密数字投资基金合伙人</li>
+                  <li>GaGa Rewards智树科技创始人</li>
+                </ul>
+                <div style="margin-top: 1rem">
+                  JR是一位充满活力、积极阳光的连续创业者，对于企业从零到一有着亲身经历及丰富经验 。凭着对企业的理解及经历，能大大提升挖掘优秀项目的能力。
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </table>
     </div>
   </div>
 </div>

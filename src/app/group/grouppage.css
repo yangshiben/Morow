@@ -1,14 +1,54 @@
-.member-clock{
-  display: inline-block;
-  width: 15rem;
-  margin: 0 1rem 1.5rem;
+
+@media screen and (min-width: 800px){
+  .banner-desc-box {
+    display: inline-block !important;
+  }
+  .name-wrap{
+    font-size: 1.2rem;
+    text-align: center;
+    color: #292b2a
+  }
+  .member-clock{
+    display: inline-block;
+    position: relative;
+    width: 18rem;
+    max-width: 100%;
+    margin: 0 1rem 1.5rem;
+  }
+  .photo-wrap{
+    display: inline-block;
+    width: 100%;
+    height: 26rem;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
 }
-.photo-wrap{
-  display: inline-block;
-  width: 15rem;
-  height: 20rem;
-  background-position: center;
-  background-size: contain;
+@media screen and (max-width: 800px){
+  .member-clock{
+    display: inline-block;
+    width: 22rem;
+    max-width: 100%;
+    margin: 0 1rem 1.5rem;
+  }
+  .photo-wrap{
+    display: inline-block;
+    width: 100%;
+    height: 32rem;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .banner-desc-box {
+    display: none !important;
+  }
+
+  .name-wrap{
+    color: #292b2a;
+    text-align: center;
+    font-size: 1.6rem;
+  }
+
 }
 .banner-desc-box{
   display: inline-block;
@@ -20,4 +60,48 @@
   color: #525252;
   padding: 1%;
   line-height: 2;
+}
+.banner-desc{
+  width: 100%;
+  font-size: 1.2rem;
+  color: #525252;
+  padding: 0;
+}
+.team-row{
+  background-color: #f7f4eb;
+  padding: 2%;
+  margin-bottom: 3%;
+}
+.team-intro{
+  color: #292b2a;
+  text-align: left;
+  padding-left: 3%;
+}
+.round-head {
+  display: inline-block;
+  width: 15rem;
+  height: 15rem;
+  border-radius: 50%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  float: right;
+}
+.member-name{
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+}
+.member-name span{
+  font-weight: 500;
+  color: #000;
+  margin-right: 2rem;
+}
+.team-detail{
+  font-size: 1rem;
+}
+.row-table{
+  width: 100%;
+}
+.row-t-left{
+  width: 35%;
 }

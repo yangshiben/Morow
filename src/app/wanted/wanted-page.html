@@ -7,22 +7,22 @@
   </div>
   <div style="margin-top: 5%;padding: 0 3%">
     <div style="padding: 2% 8%">
-      <h1 style="color: #5b5b5b;margin-bottom: 3%">招聘英才</h1>
-      <p style="color:#4b4b4b ">微合资本成功投资了数家具有企业家精神，期望改变社会、创造价值的优秀企业。在欣喜地看到这些公司快速成长的同时，
-        我们也希望能搭建一个广罗人才的平台，邀请同样具有创新力和企业家精神的您加入我们的被投公司。微合资本愿意成为优秀创业者脚下的路，
-        通往未来梦想的桥梁。如果你渴望去创造未来，如果你勇于开拓去实现梦想，那么请毫不犹豫地选择加入我们的微合大家庭!</p>
+      <h3 [ngClass]="{'announce-zh': appService.usingLang == 'zh', 'announce-en': appService.usingLang == 'en'}">
+        {{'wanted' | translate}}</h3>
+      <p style="color:#4b4b4b " *ngIf="appService.usingLang=='zh'">{{wantedInfo}} </p>
+      <p style="color:#4b4b4b " *ngIf="appService.usingLang=='en'">{{wantedInfoEn}} </p>
     </div>
     <div class="banner-area">
       <div class="mr-wanted-block" *ngFor="let item of infobanList">
         <div class="img-area" style="background-image: url('assets/image/wanted/wantedimg.jpg')"></div>
         <div class="intro-area">
-          <div style="font-size: 24px;">企业介绍</div>
+          <div style="font-size: 1.3rem;">{{'introduction' | translate}}</div>
           China is an old country, full of beauty
           and fascination. She has 56 ethnic groups, complex and varied terrains, rich and diverse natural resources, long and
           brilliant history and culture, magnificent and enchanting sceneries. These are tempting visitors all over the world
           to witness her strength, beauty, and impossibly hard language
         </div>
-        <div class="readdetail-bot"><a>了解详情 </a></div>
+        <div class="readdetail-bot"><a>{{'forDetail' | translate}} </a></div>
       </div>
     </div>
   </div>

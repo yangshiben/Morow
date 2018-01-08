@@ -15,6 +15,7 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import { TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import {HttpClient, HttpClientModule, HttpHandler} from "@angular/common/http";
+import {AppService} from "./app.service";
 
 export function createTranslateHttpLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -44,7 +45,7 @@ export function createTranslateHttpLoader(http: HttpClient) {
     RoutingModule,
     NgbModule.forRoot()
   ],
-  providers: [],
+  providers: [AppService],
   bootstrap: [AppComponent]
 })
  export class AppModule { }

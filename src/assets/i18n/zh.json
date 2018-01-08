@@ -1,4 +1,5 @@
 {
+  "logoUrl": "assets/image/logoCh.png",
   "menu1": "首页",
   "menu2": "关于我们",
   "menu3": "投资团队",
@@ -6,5 +7,31 @@
   "menu5": "活动与新闻",
   "menu6": "招聘英才",
 
-  "changeLang": "切换语言"
+  "changeLang": "切换语言",
+
+  "announcement": "企业公告",
+  "videoTitle": "视频标题",
+  "newsMore": "更多",
+  "aboutUs": "关于我们",
+  "investmentArea": "投资领域",
+  "chainBlock": "区块链技术",
+  "heightTech": "高新科技",
+  "internet": "互联网",
+  "consumer": "消费升级",
+  "energy": "工业能源",
+  "estate": "房地产",
+  "entertainment": "娱乐文化",
+  "brandChain": "品牌连锁",
+  "travel": "旅游产业",
+
+  "teamSlogan": "团队标语",
+
+  "philosophy": "投资哲学",
+
+  "next": "下一页",
+  "previous": "上一页",
+
+  "wanted": "招聘英才",
+  "introduction": "企业介绍",
+  "forDetail": "了解详情"
 }

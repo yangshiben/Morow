@@ -1,24 +1,24 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div class="dropdown-bar">
-  <ul class="drop-menu" *ngIf="menuDrop">
-    <li><a (click)="nowTab=1" (click)="routeNav('home')">{{'menu1' | translate}}</a></li>
-    <li><a (click)="nowTab=2" (click)="routeNav('about')">{{'menu2' | translate}}</a></li>
-    <li><a (click)="nowTab=3" (click)="routeNav('group')">{{'menu3' | translate}}</a></li>
-    <li><a (click)="nowTab=4" (click)="routeNav('investment')">{{'menu4' | translate}}</a></li>
-    <li><a (click)="nowTab=5" (click)="routeNav('news')">{{'menu5' | translate}}</a></li>
-    <li><a (click)="nowTab=6" (click)="routeNav('wanted')">{{'menu6' | translate}}</a></li>
-  </ul>
-  <div class="lang-mobile"><div ><span (click)="langShow=!langShow">{{'changeLang' | translate}}
+  <div class="lang-mobile"><div ><span (click)="langShow=!langShow;menuDrop=false">{{'changeLang' | translate}}
         <i class="dropdown-a"></i></span></div>
     <ul class="lang-ls-mobile" *ngIf="langShow">
-      <li (click)="setLanguage('zh')">中文</li>
+      <li (click)="setLanguage('zh')" class="ls-divider">简体中文</li>
       <li (click)="setLanguage('en')">English</li>
     </ul>
   </div>
-  <span class="drop-icon" (click)="menuDrop=!menuDrop"></span>
+  <span class="drop-icon" (click)="menuDrop=!menuDrop;langShow=false"></span>
 </div>
+<ul class="drop-menu" *ngIf="menuDrop">
+  <li (click)="routeNav('home', 1)"><a>{{'menu1' | translate}}</a></li>
+  <li (click)="routeNav('about', 2)"><a>{{'menu2' | translate}}</a></li>
+  <li (click)="routeNav('group', 3)"><a>{{'menu3' | translate}}</a></li>
+  <li (click)="routeNav('investment', 4)"><a>{{'menu4' | translate}}</a></li>
+  <li (click)="routeNav('news', 5)"><a>{{'menu5' | translate}}</a></li>
+  <li (click)="routeNav('wanted', 6)"><a>{{'menu6' | translate}}</a></li>
+</ul>
 <div class="logo-toprow">
-  <img src="assets/image/logoCh.png">
+  <img src="{{'logoUrl' | translate}}">
 </div>
 <div class="bar-pos">
   <div>
@@ -35,7 +35,7 @@
       <div class="lang-tab"><div><span (click)="langShow=!langShow">
         {{'changeLang' | translate}}<i class="dropdown-a"></i></span></div>
         <ul class="lang-ls" *ngIf="langShow">
-          <li (click)="setLanguage('zh')">中文</li>
+          <li (click)="setLanguage('zh')">简体中文</li>
           <li (click)="setLanguage('en')">English</li>
         </ul>
       </div>
@@ -43,6 +43,6 @@
 </div>
 <router-outlet></router-outlet>
 <div class="mr-footer">
-  <div class="footer-logo"><img src="../assets/image/logoCh.png"></div>
+  <div class="footer-logo"><img src="{{'logoUrl' | translate}}"></div>
   <p class="copyright-p">Copyright©️ 1996-2016 Wemerge Ventures. All rights reserved</p>
 </div>

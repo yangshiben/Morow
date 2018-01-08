@@ -7,44 +7,26 @@
   </div>
   <div style="margin-top: 5%;padding: 0 8%">
     <div style="margin-top: 5%">
-      <table class="news-table">
-        <tr>
-          <td><img height="352" src="assets/image/imgNews.png"></td>
-          <td style="padding-left: 60px">
-            <h2 style="color: #5b5b5b;">最近新闻 Latest news</h2>
-            <p>Even Duterte himself has been accused of ordering a journalist to be killed. Two former policemen alleged earlier this year that Duterte,
-              while mayor of Davao City in 2003,paid tens of thousands of dollars to have radio broadcaster
-              Juan Pala murdered. Duterte denied the accusations.</p>
-          </td>
-        </tr>
-        <tr>
-          <td><img height="352" src="assets/image/imgNews.png"></td>
-          <td style="padding-left: 60px">
-            <h2 style="color: #5b5b5b;">最近新闻 Latest news</h2>
-            <p>Even Duterte himself has been accused of ordering a journalist to be killed. Two former policemen alleged earlier this year that Duterte,
-              while mayor of Davao City in 2003,paid tens of thousands of dollars to have radio broadcaster
-              Juan Pala murdered. Duterte denied the accusations.</p>
-          </td>
-        </tr>
-        <tr>
-          <td><img height="352" src="assets/image/imgNews.png"></td>
-          <td style="padding-left: 60px">
-            <h2 style="color: #5b5b5b;">最近新闻 Latest news</h2>
-            <p>Even Duterte himself has been accused of ordering a journalist to be killed. Two former policemen alleged earlier this year that Duterte,
-              while mayor of Davao City in 2003,paid tens of thousands of dollars to have radio broadcaster
-              Juan Pala murdered. Duterte denied the accusations.</p>
-          </td>
-        </tr>
-      </table>
+      <div style="margin-bottom: 2%" *ngFor="let news of newsList">
+        <div class="news-pic"><img src="{{news.img}}"></div>
+        <div class="news-content" *ngIf="appService.usingLang == 'zh'">
+          <a class="news-title">{{news.title.zh}}</a>
+          <p>{{news.summary.zh}}</p>
+        </div>
+        <div class="news-content" *ngIf="appService.usingLang == 'en'">
+          <a class="news-title">{{news.title.en}}</a>
+          <p>{{news.summary.en}}</p>
+        </div>
+      </div>
       <div style="margin-top: 3%;text-align: center">
         <ul class="mr-page">
-          <li class="page-bt">上一页</li>
+          <li class="page-bt">{{'previous' | translate}}</li>
           <li class="page-bt">1</li>
           <li class="page-bt">2</li>
           <li class="page-bt">3</li>
           <li class="page-bt">...</li>
           <li class="page-bt">6</li>
-          <li class="page-bt">下一页</li>
+          <li class="page-bt">{{'next' | translate}}</li>
         </ul>
       </div>
     </div>

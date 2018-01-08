@@ -6,6 +6,8 @@ import 'rxjs/add/operator/filter';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/mergeMap';
 import {TranslateService} from "@ngx-translate/core";
+import {AppService} from "./app.service";
+import Nodemailer from 'nodemailer';
 
 @Component({
   selector: 'app-root',
@@ -18,10 +20,11 @@ export class AppComponent implements OnInit, AfterViewInit {
   document = document;
   langShow = false;
   menuDrop = false;
-  usingLang = 1;
+  usingLang = 'zh';
 
   constructor(private router: Router, private activatesRoute: ActivatedRoute,
-              private translateService: TranslateService, private elm: ElementRef) {}
+              private translateService: TranslateService, private elm: ElementRef,
+              private appService: AppService) {}
 
   ngOnInit() {
     this.routerWatcher();
@@ -43,13 +46,15 @@ export class AppComponent implements OnInit, AfterViewInit {
     // 获取当前浏览器环境的语言比如en、 zh
     const broswerLang = this.translateService.getBrowserLang();
     this.translateService.use(broswerLang.match(/en|zh/) ? broswerLang : 'zh');
-    this.usingLang = 1;
+    this.appService.usingLang = 'zh';
     // --- set i18n end ---
   }
   setLanguage(lang) {
     this.langShow = false;
-    this.usingLang = lang === 'zn' ? 1 : 2;
+    this.appService.usingLang = lang;
     this.translateService.use(lang);
+    // this.router.navigateByUrl('home');
+    // document.location.reload();
   }
   // 监控路由变化，动态切换激活菜单
   routerWatcher() {
@@ -91,7 +96,8 @@ export class AppComponent implements OnInit, AfterViewInit {
       });
   }
 
-  routeNav(route) {
+  routeNav(route, tab) {
+    this.nowTab = tab;
     this.menuDrop = false;
     this.router.navigate([route]);
   }

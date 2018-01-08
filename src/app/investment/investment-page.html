@@ -7,7 +7,7 @@
   </div>
   <div style="margin-top: 5%;padding: 0 3%">
     <div style="padding: 2% 8%">
-      <h2 style="color: #5b5b5b">投资哲学</h2>
+      <h2 [ngClass]="{'announce-zh': appService.usingLang == 'zh', 'announce-en': appService.usingLang == 'en'}">{{'philosophy' | translate}}</h2>
       <p style="color:#4b4b4b ">Some counterfeit and third party power adapters and batteries may not be designed properly and could result in safety issues.
         To ensure you receive a genuine Apple battery during a battery replacement, we recommend visiting an Apple Authorized Service
         Provider. If you need a replacement adapter to charge your Apple device, we recommend getting an Apple power adapter.</p>
@@ -18,25 +18,37 @@
           <div class="invest-block">
             <div class="desc-strip"><span class="lab-l"></span>
               <div class="info-content">
-                <div>
-                  <p style="font-size: .9rem;font-style: italic">专门利人，得以利己</p>
-                  <div style="font-size: .8rem">我们以诚信为准则，用专业标准评估，为企业以及合伙人创造利益价值最大化。</div>
+                <div *ngIf="appService.usingLang=='zh'">
+                  <div class="quota-title">{{philosophyList[0].title.zh}}</div>
+                  <div class="quota-content">{{philosophyList[0].content.zh}}</div>
+                </div>
+                <div *ngIf="appService.usingLang=='en'">
+                  <div class="quota-title">{{philosophyList[0].title.en}}</div>
+                  <div class="quota-content">{{philosophyList[0].content.en}}</div>
                 </div>
               </div>
             </div>
             <div class="desc-strip" style="margin: 1.5rem 0;"><span class="lab-l"></span>
               <div class="info-content">
-                <div>
-                  <p style="font-size: .9rem;font-style: italic">专门利人，得以利己</p>
-                  <div style="font-size: .8rem">我们以诚信为准则，用专业标准评估，为企业以及合伙人创造利益价值最大化。</div>
+                <div *ngIf="appService.usingLang=='zh'">
+                  <div class="quota-title">{{philosophyList[1].title.zh}}</div>
+                  <div class="quota-content">{{philosophyList[1].content.zh}}</div>
+                </div>
+                <div *ngIf="appService.usingLang=='en'">
+                  <div class="quota-title">{{philosophyList[1].title.en}}</div>
+                  <div class="quota-content">{{philosophyList[1].content.en}}</div>
                 </div>
               </div>
             </div>
             <div class="desc-strip"><span class="lab-l"></span>
               <div class="info-content">
-                <div>
-                  <p style="font-size: .9rem;font-style: italic">专门利人，得以利己</p>
-                  <div style="font-size: .8rem">我们以诚信为准则，用专业标准评估，为企业以及合伙人创造利益价值最大化。</div>
+                <div *ngIf="appService.usingLang=='zh'">
+                  <div class="quota-title">{{philosophyList[2].title.zh}}</div>
+                  <div class="quota-content">{{philosophyList[2].content.zh}}</div>
+                </div>
+                <div *ngIf="appService.usingLang=='en'">
+                  <div class="quota-title">{{philosophyList[2].title.en}}</div>
+                  <div class="quota-content">{{philosophyList[2].content.en}}</div>
                 </div>
               </div>
             </div>
@@ -49,25 +61,37 @@
             <div class="moto-block">
               <div class="desc-strip"><span class="lab-l"></span>
                 <div class="info-content">
-                  <div>
-                    <div class="quota-title">专门利人，得以利己</div>
-                    <div class="quota-content">我们以诚信为准则，用专业标准评估，为企业以及合伙人创造利益价值最大化。</div>
+                  <div *ngIf="appService.usingLang=='zh'">
+                    <div class="quota-title">{{philosophyList[0].title.zh}}</div>
+                    <div class="quota-content">{{philosophyList[0].content.zh}}</div>
+                  </div>
+                  <div *ngIf="appService.usingLang=='en'">
+                    <div class="quota-title">{{philosophyList[0].title.en}}</div>
+                    <div class="quota-content">{{philosophyList[0].content.en}}</div>
                   </div>
                 </div>
               </div>
               <div class="desc-strip" style="margin: .5rem 0;"><span class="lab-l"></span>
                 <div class="info-content">
-                  <div>
-                    <div class="quota-title">专门利人，得以利己</div>
-                    <div class="quota-content">我们以诚信为准则，用专业标准评估，为企业以及合伙人创造利益价值最大化。</div>
+                  <div *ngIf="appService.usingLang=='zh'">
+                    <div class="quota-title">{{philosophyList[1].title.zh}}</div>
+                    <div class="quota-content">{{philosophyList[1].content.zh}}</div>
+                  </div>
+                  <div *ngIf="appService.usingLang=='en'">
+                    <div class="quota-title">{{philosophyList[1].title.en}}</div>
+                    <div class="quota-content">{{philosophyList[1].content.en}}</div>
                   </div>
                 </div>
               </div>
               <div class="desc-strip"><span class="lab-l"></span>
                 <div class="info-content">
-                  <div>
-                    <div class="quota-title">专门利人，得以利己</div>
-                    <div class="quota-content">我们以诚信为准则，用专业标准评估，为企业以及合伙人创造利益价值最大化。</div>
+                  <div *ngIf="appService.usingLang=='zh'">
+                    <div class="quota-title">{{philosophyList[2].title.zh}}</div>
+                    <div class="quota-content">{{philosophyList[2].content.zh}}</div>
+                  </div>
+                  <div *ngIf="appService.usingLang=='en'">
+                    <div class="quota-title">{{philosophyList[2].title.en}}</div>
+                    <div class="quota-content">{{philosophyList[2].content.en}}</div>
                   </div>
                 </div>
               </div>
@@ -76,78 +100,84 @@
           <!--<img width="100%" src="assets/image/investment/img402.png"></div>-->
       </div>
       <div class="main-zone">
-        <div class="invest-wrap" style="background-image: url('assets/image/investment/imgPinBa.png')">
-          <!--<img src="assets/image/investment/imgPinBa.png">-->
-          <div class="img-mask">
-            <div class="text-content">
-              聘吧：聘吧是大马首创的社交媒体平台。聘吧以个人技能，人才需求，及社交为导向，开创了这款手机应用程序，造福蓝领人士、自由工作者及社会新鲜人等等。聘吧在10月15日在
-              马来西亚正式推介。目前已于几所大学学府及政府机构签署了备忘录。聘吧目前有超过两万个具备各种不同技能的用户。聘吧正在积极筹备向亚太区发展，广泛的把聘吧带到
-              世界的每一个角落成为每个人必备的招工找工平台。
+        <div *ngIf="appService.usingLang=='zh'">
+          <div class="row-group" *ngFor="let item of enterpriseList">
+            <div *ngIf="item.index % 2 != 0" (click)="showIntroduce(item)">
+              <div class="invest-wrap" [ngStyle]="{'background-image': 'url(' + item.img + ')'}">
+                <!--<img src="assets/image/investment/imgPinBa.png">-->
+                <div class="img-mask">
+                  <div class="text-content">
+                    {{item.introduce}}
+                  </div>
+                </div>
+              </div>
+              <div class="invest-wrap">
+                <div class="logo-wrap">
+                  <img src="{{item.logo}}">
+                </div>
+              </div>
+            </div>
+            <div *ngIf="item.index % 2 == 0" (click)="showIntroduce(item)">
+              <div class="invest-wrap">
+                <div class="logo-wrap">
+                  <img src="{{item.logo}}">
+                </div>
+              </div>
+              <div class="invest-wrap" [ngStyle]="{'background-image': 'url(' + item.img + ')'}">
+                <!--<img src="assets/image/investment/imgPinBa.png">-->
+                <div class="img-mask">
+                  <div class="text-content">
+                    {{item.introduce}}
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        <div class="invest-wrap">
-          <div class="logo-wrap">
-            <img src="assets/image/investment/img421.png">
-          </div>
-        </div>
-        <div class="invest-wrap">
-          <div class="logo-wrap">
-            <img src="assets/image/investment/img422.png">
-          </div>
-        </div>
-        <div class="invest-wrap"><img src="assets/image/investment/imgEntertainment.png">
-          <div class="img-mask">
-            <div class="text-content">
-              摩罗影视文化传媒：业务版图包括电影制作、音乐发行、艺人网红经纪、互联网新媒体等。目前已投入第一部院线电影（致富计划），邀请了中国、台湾、马来西亚及新加坡的演员及电影制作团队
-              参与制作，预计2018年10月份在全马各大院线上映，并于中国爱奇艺视频平台上线。
+        <div *ngIf="appService.usingLang=='en'">
+          <div class="row-group" *ngFor="let item of enterpriseListEn">
+            <div *ngIf="item.index % 2 != 0" (click)="showIntroduce(item)">
+              <div class="invest-wrap" [ngStyle]="{'background-image': 'url(' + item.img + ')'}">
+                <!--<img src="assets/image/investment/imgPinBa.png">-->
+                <div class="img-mask">
+                  <div class="text-content">
+                    {{item.introduce}}
+                  </div>
+                </div>
+              </div>
+              <div class="invest-wrap">
+                <div class="logo-wrap">
+                  <img src="{{item.logo}}">
+                </div>
+              </div>
             </div>
-          </div></div>
-
-        <div class="invest-wrap" style="background-image: url('assets/image/investment/imgCoMo.png')">
-          <!--<img src="assets/image/investment/imgCoMo.png">-->
-          <div class="img-mask">
-            <div class="text-content">
-              MergeSpace微合空间：总部设立于马来西亚吉隆坡，拥有超过1000平方的共享办公空间。为企业提供场地、融资、招聘及各种创业资源等服务，实现企业加速发展的目的。
-              除此之外，对于优秀企业MergeSpace将通过战略持股，为企业的发展提供长期孵化，并在未来一同享受企业成长带来的回报
+            <div *ngIf="item.index % 2 == 0" (click)="showIntroduce(item)">
+              <div class="invest-wrap">
+                <div class="logo-wrap">
+                  <img src="{{item.logo}}">
+                </div>
+              </div>
+              <div class="invest-wrap" [ngStyle]="{'background-image': 'url(' + item.img + ')'}">
+                <!--<img src="assets/image/investment/imgPinBa.png">-->
+                <div class="img-mask">
+                  <div class="text-content">
+                    {{item.introduce}}
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-        <div class="invest-wrap">
-          <div class="logo-wrap">
-            <img src="assets/image/investment/imgMergeSpace.png">
-          </div>
-        </div>
-        <div class="invest-wrap">
-          <div class="logo-wrap">
-            <img src="assets/image/investment/img424.png">
-          </div>
-        </div>
-        <div class="invest-wrap" style="background-image: url('assets/image/investment/imgKioda.png')">
-          <!--<img src="assets/image/investment/imgKioda.png">-->
-          <div class="img-mask">
-            <div class="text-content">
-              KIODA可爱优品：定位于韩国快时尚休闲百货品牌，2016年创立于马来西亚，并在1年半的时间迅速发展超过40家门店，目前已进入印度、印尼、菲律宾、越南、哈萨克斯坦、
-              吉尔吉斯斯坦及新加坡等国家。2017年营业额已达到1000万美元。计划未来三年开设1000家门店并于美国主板上市。
-            </div>
-          </div>
-        </div>
-
-        <div class="invest-wrap" style="background-image: url('assets/image/investment/imgProperty.png')">
-          <!--<img src="assets/image/investment/imgProperty.png">-->
-          <div class="img-mask">
-            <div class="text-content">
-              摩罗地产：专注旅游地产开发，2017年10月份正式与柬埔寨政府联合发布新闻，正式于柬埔寨西港投入总值7700万美元的综合商业大厦，建设包括：商业办公楼、豪华公寓、
-              五星级酒店和大型购物商城。未来摩罗地产将放眼发展中国家的发展建设，为改善当地环境及提升生活品质做贡献。
-            </div>
-          </div>
-        </div>
-        <div class="invest-wrap">
-          <div class="logo-wrap">
-            <img src="assets/image/investment/img425.png">
           </div>
         </div>
       </div>
     </div>
+  </div>
+</div>
+<div class="bg-mask" *ngIf="showMask">
+  <div class="intro-modal">
+    <div class="modalheader"><span class="close-x" (click)="showMask=false">&times;</span></div>
+    <p class="intro-content">
+      <img src="{{showEnterprise.logo}}">
+      {{showEnterprise.introduce}}
+     </p>
   </div>
 </div>
